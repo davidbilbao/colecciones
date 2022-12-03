@@ -11,6 +11,21 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'event-create',
+    loadChildren: () => import('./pages/event-create/event-create.module').then( m => m.EventCreatePageModule)
+  },
+  {
+    path: 'event-detail',
+    loadChildren: () => import('./pages/event-detail/event-detail.module').then( m => m.EventDetailPageModule)
+  },
+  {
+    path: 'event-list',
+    loadChildren: () => import('./pages/event-list/event-list.module').then( m => m.EventListPageModule)
+  }, {
+    path: 'event-datail/:id',
+    loadChildren: () => import('./pages/event-detail/event-detail.module').then(m => m.EventDetailPageModule)
+  },
 ];
 
 @NgModule({
